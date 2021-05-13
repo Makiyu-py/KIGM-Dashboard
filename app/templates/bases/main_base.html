@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>KIGM Dashboard Rewrite</title>
+		<script
+			src="https://kit.fontawesome.com/2bc3e593f4.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- TailWind CSS -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='dist/css/tw.css') }}"
+		/>
+	</head>
+	<body class="flex-col min-h-screen bg-gray-800">
+		<nav class="flex items-center justify-between flex-wrap p-3">
+			<div class="flex items-center flex-shrink-0 text-white mx-2 mr-4">
+				<a href="/" class="font-semibold text-xl tracking-tight">KIGM</a>
+			</div>
+			<div class="block lg:hidden">
+				<button
+					class="
+						flex
+						items-center
+						p-1
+						border
+						rounded
+						mobile-btn
+						text-gray-200
+						border-gray-400
+						hover:text-white
+						hover:border-white
+					"
+				>
+					<!--
+						TODO
+							* Better btn design for responsive thing
+					-->
+					<svg
+						class="fill-current h-3 w-3"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+					</svg>
+				</button>
+			</div>
+			<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div class="text-xs lg:flex-grow">
+					<a
+						class="
+							block
+							hidden
+							resp-header
+							lg:inline-block
+							lg:mt-0
+							text-gray-200
+							hover:text-white
+							mr-8
+							lg:ml-8
+							ml-2
+							mt-4
+						"
+					>
+						Features
+					</a>
+					<a
+						class="
+							block
+							hidden
+							resp-header
+							lg:inline-block
+							lg:mt-0
+							text-gray-200
+							hover:text-white
+							lg:ml-auto
+							ml-2
+							mr-8
+							mt-4
+						"
+					>
+						Dashboard
+					</a>
+					<a
+						href="{{ url_for('support') }}"
+						class="
+							block
+							hidden
+							resp-header
+							mr-8
+							my-4
+							lg:mb-0
+							lg:inline-block
+							lg:mt-0
+							lg:ml-auto
+							ml-2
+							text-gray-200
+							hover:text-white
+						"
+					>
+						Support
+					</a>
+				</div>
+				<div>
+					<a
+						href="#"
+						class="
+							hidden
+							resp-header
+							lg:inline-block
+							text-sm
+							p-2
+							leading-none
+							border
+							rounded
+							text-white
+							border-white
+							hover:border-transparent
+							hover:text-gray-600
+							hover:bg-white
+							mt-4
+							lg:mt-0
+							lg:mr-2
+						"
+						>Login With Discord</a
+					>
+				</div>
+			</div>
+		</nav>
+		<main class="flex-grow">{% block content %} {% endblock content %}</main>
+		<footer class="bg-gray-900 h-auto relative inset-x-0 bottom-0">
+			<div
+				class="md:text-sm text-xs grid grid-cols-1 md:grid-cols-3 items-start"
+			>
+				<div class="flex flex-col mx-10 mt-10 md:mt-3">
+					<div class="mb-2 text-gray-400">Created Using</div>
+					<div
+						class="
+							rounded
+							space-y-2
+							max-w-sm
+							border-gray-600 border-t-2
+							text-gray-400 text-center
+							lg:text-left
+						"
+					>
+						<a
+							href="https://tailwindcss.com/"
+							class="pt-3 block hover:text-gray-300"
+						>
+							TailWind CSS
+						</a>
+						<a
+							href="https://fontawesome.com/"
+							class="block hover:text-gray-300"
+						>
+							FontAwesome
+						</a>
+						<a href="#" class="block hover:text-gray-300">Love and Affection</a>
+					</div>
+				</div>
+				<div class="flex flex-col mx-10 mt-10 md:mt-3">
+					<div class="mb-2 text-gray-400">Created Using</div>
+					<div
+						class="
+							rounded
+							space-y-2
+							max-w-sm
+							border-gray-600 border-t-2
+							text-gray-400 text-center
+							lg:text-left
+						"
+					>
+						<a
+							href="https://tailwindcss.com/"
+							class="pt-3 block hover:text-gray-300"
+						>
+							TailWind CSS
+						</a>
+						<a
+							href="https://fontawesome.com/"
+							class="block hover:text-gray-300"
+						>
+							FontAwesome
+						</a>
+					</div>
+				</div>
+				<div class="flex flex-col mx-10 mt-10 md:mt-3">
+					<div class="mb-2 text-gray-400">Created Using</div>
+					<div
+						class="
+							rounded
+							space-y-2
+							max-w-sm
+							border-gray-600 border-t-2
+							text-gray-400 text-center
+							lg:text-left
+						"
+					>
+						<a
+							href="https://tailwindcss.com/"
+							class="pt-3 block hover:text-gray-300"
+						>
+							TailWind CSS
+						</a>
+						<a
+							href="https://fontawesome.com/"
+							class="block hover:text-gray-300"
+						>
+							FontAwesome
+						</a>
+						<a
+							href="https://palletsprojects.com/p/flask"
+							class="block hover:text-gray-300"
+							>Flask</a
+						>
+					</div>
+				</div>
+			</div>
+			<div class="pt-3 pb-4 text-gray-200 text-center font-bold">
+				Made with
+				<span class="text-red-400"
+					><i title="heart favicon" class="fas fa-heart"></i
+				></span>
+				by
+				<a class="hover:text-gray-300" href="https://github.com/Makiyu-py"
+					>Makiyu</a
+				>
+			</div>
+		</footer>
+	</body>
+	<script src="{{ url_for('static', filename='src/js/script.js') }}"></script>
+</html>
