@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, abort
 from .config import db
 from . import app
 
@@ -8,6 +8,14 @@ _mongo = db()  # main db instance
 @app.route("/")
 def homepage():
     return render_template("home.html", title="Home")
+
+@app.route("/commands")
+def cmd_infos():
+    return abort(404)
+
+@app.route("/dashboard")
+def dashboard():
+    return abort(404)
 
 @app.route("/support")
 def support():
