@@ -26,27 +26,16 @@
 					class="
 						flex
 						items-center
-						p-1
-						border
+						md:mr-2
 						rounded
 						mobile-btn
+						focus:outline-none
 						text-gray-200
-						border-gray-400
 						hover:text-white
-						hover:border-white
+						hover:bg-gray-900
 					"
 				>
-					<!--
-						TODO
-							* Better btn design for responsive thing
-					-->
-					<svg
-						class="fill-current h-3 w-3"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-					</svg>
+					<i class="fas fa-bars p-2 text-md font-bold"></i>
 				</button>
 			</div>
 			<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
@@ -192,6 +181,12 @@
 					</div>
 				</div>
 				<div class="flex flex-col mx-10 mt-10 md:mt-3">
+					<!--
+						FIXME: Grid sizes when the browser's width on <767px
+							example:
+								set the browser's width size to 710px and look
+								at the footer, it's garbageee too much spacee
+					-->
 					<div class="mb-2 text-gray-400">Created Using</div>
 					<div
 						class="
