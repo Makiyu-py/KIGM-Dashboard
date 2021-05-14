@@ -7,11 +7,15 @@ _mongo = db()  # main db instance
 
 @app.route("/")
 def homepage():
-    return render_template("home.html")
+    return render_template("home.html", title="Home")
 
 @app.route("/support")
 def support():
     return redirect("https://discord.gg/jz4WxkB")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', title="404")
 
 # TODO
 #    - Actual Dashboard (via flask-discord)
