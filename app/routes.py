@@ -12,7 +12,7 @@ def homepage():
 
 @app.route("/login")
 def login():
-    return discord.create_session()
+    return discord.create_session(scope=['identify', 'guilds'])
 
 @app.route("/callback/")
 def callback():
