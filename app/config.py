@@ -6,9 +6,8 @@ from flask_discord import DiscordOAuth2Session
 from motor.motor_asyncio import AsyncIOMotorClient
 
 
-LOGIN_URL = "https://discord.com/api/oauth2/authorize?client_id=763626077292724264&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fdiscord-login&response_type=code&scope=identify%20guilds"
 BOT_INVITE = "https://discord.com/api/oauth2/authorize?client_id=763626077292724264&permissions=273115158&scope=bot%20applications.commands"
-REDIRECT_URI = "http://127.0.0.1:5000/callback"
+REDIRECT_URI = "https://kigm.vercel.app/callback"
 
 FLASK_SECRET_KEY = bytes(getenv("FLASK_SECRET_KEY"), encoding='utf8')
 MONGO_URI = getenv("MONGO_SECRET")
