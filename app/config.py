@@ -1,23 +1,20 @@
-import os
+from os import getenv
 from . import app
 from utils import MongoClient
 from flask import render_template
-from decouple import config as get_env
 from flask_discord import DiscordOAuth2Session
 from motor.motor_asyncio import AsyncIOMotorClient
 
-
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 LOGIN_URL = "https://discord.com/api/oauth2/authorize?client_id=763626077292724264&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fdiscord-login&response_type=code&scope=identify%20guilds"
 BOT_INVITE = "https://discord.com/api/oauth2/authorize?client_id=763626077292724264&permissions=273115158&scope=bot%20applications.commands"
 REDIRECT_URI = "http://127.0.0.1:5000/callback"
 
-FLASK_SECRET_KEY = bytes(get_env("FLASK_SECRET_KEY"), encoding='utf8')
-MONGO_URI = get_env("MONGO_SECRET")
-CLI_SECRET = get_env("CLIENT_SECRET")
-CLI_ID = int(get_env("CLIENT_ID"))
-BOT_TOKEN = get_env("BOT_TOKEN")
+FLASK_SECRET_KEY = bytes(getenv("FLASK_SECRET_KEY"), encoding='utf8')
+MONGO_URI = getenv("MONGO_SECRET")
+CLI_SECRET = getenv("CLIENT_SECRET")
+CLI_ID = int(getenv("CLIENT_ID"))
+BOT_TOKEN = getenv("BOT_TOKEN")
 
 app.secret_key = FLASK_SECRET_KEY
 app.config["DISCORD_CLIENT_ID"] = CLI_ID
