@@ -1,8 +1,8 @@
 {
     "functions": {
-       "api/__init__.py": {"maxDuration": 10}
+       "app/__init__.py": {"maxDuration": 10}
      },
     "routes": [{
-      "src": "/(.*)", "dest": "api/__init__"
+      "src": "/(.*)", "dest": "app/__init__"
      }]
   }
