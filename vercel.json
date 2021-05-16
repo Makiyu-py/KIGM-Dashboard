@@ -1,0 +1,8 @@
+{
+    "functions": {
+       "api/__init__.py": {"maxDuration": 10}
+     },
+    "routes": [{
+      "src": "/(.*)", "dest": "api/__init__"
+     }]
+  }
