@@ -96,29 +96,44 @@
 						Support
 					</a>
 				</div>
-				<div>
+				<div class="text-gray-200 hover:text-white">
+					{% if user %}
+					<div class="resp-header hidden lg:inline-block ml-2 lg:mt-1 lg:mr-5">
+						<div class="lg:inline-flex">
+							<div class="hidden lg:inline mr-2">
+								<img
+									src="{{ user.avatar_url }}"
+									class="h-8 rounded-full"
+									alt="Your Discord PFP!"
+								/>
+							</div>
+							<div class="lg:mt-1 text-xs lg:text-sm">{{ user.name }}</div>
+						</div>
+					</div>
+					{% else %}
 					<a
-						href="#"
+						href="{{ url_for('login') }}"
 						class="
 							hidden
 							resp-header
 							lg:inline-block
-							text-sm
 							p-2
 							leading-none
 							border
 							rounded
-							text-white
+							text-sm
 							border-white
 							hover:border-transparent
 							hover:text-gray-600
 							hover:bg-white
-							mt-4
+							ml-1
 							lg:mt-0
+							lg:ml-0
 							lg:mr-2
 						"
 						>Login With Discord</a
 					>
+					{% endif %}
 				</div>
 			</div>
 		</nav>

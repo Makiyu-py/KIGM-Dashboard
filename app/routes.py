@@ -1,13 +1,23 @@
 from flask import render_template, redirect, url_for, abort
-from .config import db
-from . import app
+from flask_discord import Unauthorized
+from .config import db, better_render
+from . import app, discord
 
 
 _mongo = db()  # main db instance
 
 @app.route("/")
 def homepage():
-    return render_template("home.html", title="Home")
+    return better_render("home.html", title="Home")
+
+@app.route("/login")
+def login():
+    return discord.create_session()
+
+@app.route("/callback/")
+def callback():
+    discord.callback()
+    return redirect(url_for("homepage"))
 
 @app.route("/commands")
 def cmd_infos():
@@ -23,11 +33,13 @@ def support():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html', title="404")
+    return better_render('404.html', title="404")
+
+@app.errorhandler(Unauthorized)
+def page_not_found(e):
+    return redirect(url_for("login"))
 
 # TODO
 #    - Actual Dashboard (via flask-discord)
-#    - Add login page from the "login with discord" btn
 #    - Getting cmds then outputting it to a page
 #      (I don't have ideas on how to do that yet)
-
