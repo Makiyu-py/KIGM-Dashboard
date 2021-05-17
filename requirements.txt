@@ -9,9 +9,6 @@ Flask==1.1.4
 Flask-Assets==2.0
 Flask-Discord==0.1.64
 idna==2.10
-itsdangerous==2.0.0
-Jinja2==3.0.0
-MarkupSafe==2.0.0
 motor==2.4.0
 multidict==5.1.0
 oauthlib==3.1.0
