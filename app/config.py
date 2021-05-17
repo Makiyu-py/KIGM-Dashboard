@@ -9,9 +9,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
-LOGIN_URL = "https://discord.com/api/oauth2/authorize?client_id=763626077292724264&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fdiscord-login&response_type=code&scope=identify%20guilds"
-BOT_INVITE = "https://discord.com/api/oauth2/authorize?client_id=763626077292724264&permissions=273115158&scope=bot%20applications.commands"
-REDIRECT_URI = "http://127.0.0.1:5000/callback"
+REDIRECT_URI = "http://127.0.0.1:5000/callback" # OAuth2->Redirects add this one there
 
 FLASK_SECRET_KEY = bytes(get_env("FLASK_SECRET_KEY"), encoding='utf8')
 MONGO_URI = get_env("MONGO_SECRET")

@@ -1,6 +1,7 @@
 from flask import render_template, redirect, url_for, abort
+from .config import BOT_TOKEN, db, better_render
+from utils.discord_stuff import get_mutuals
 from flask_discord import Unauthorized
-from .config import db, better_render
 from . import app, discord
 
 
@@ -24,8 +25,11 @@ def cmd_infos():
     return abort(404)
 
 @app.route("/dashboard")
-def dashboard():
-    return abort(404)
+async def dashboard():
+    user_guilds = discord.fetch_guilds()
+    mutuals = await get_mutuals(user_guilds, token=BOT_TOKEN)
+
+    return better_render("dashboard.html", title="Dashboard", guilds=mutuals)
 
 @app.route("/support")
 def support():

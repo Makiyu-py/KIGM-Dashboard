@@ -1,6 +1,6 @@
 from os import environ
-import hashlib
 import collections
+import hashlib
 
 
 class MongoClient:
@@ -246,7 +246,7 @@ class MongoClient:
          - i: str - The string you want to iterate on
         """
         i = str(i)
-        for _ in range(int(environ.get("ITERATE_ENCRYPTION_COUNT"))):
+        for _ in range(int(environ.get("ITERATE_ENCRYPTION_COUNT", 1))):
             i = hashlib.sha256(i.encode()).hexdigest()
             # i = hashlib.sha256(bytes(i, 'utf-8')).hexdigest()
         return i

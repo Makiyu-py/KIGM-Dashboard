@@ -1,1 +1,7 @@
-{% extends "bases/main_base.html" %}
+{% extends "bases/main_base.html" %} {% block content %}
+<div class="mt-12 text-center flex-col">
+	{% for guild in guilds %}
+	<div class="text-gray-200 my-2">{{ guild.name }}</div>
+	{% endfor %}
+</div>
+{% endblock content %}
