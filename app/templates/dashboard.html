@@ -1,7 +1,16 @@
 {% extends "bases/main_base.html" %} {% block content %}
-<div class="mt-12 text-center flex-col">
+<div class="mx-3 mt-3 mb-10 grid grid-cols-1 md:grid-cols-3 gap-6">
 	{% for guild in guilds %}
-	<div class="text-gray-200 my-2">{{ guild.name }}</div>
+	<div class="bg-gray-700 text-center rounded">
+		<div class="mt-5 py-2">
+			<img
+				src="{{ guild.icon_url }}"
+				alt="{{ guild.name }} Avatar"
+				class="mx-auto w-32 h-32 rounded-full"
+			/>
+		</div>
+		<div class="my-4 text-gray-200">{{ guild.name }}</div>
+	</div>
 	{% endfor %}
 </div>
 {% endblock content %}
