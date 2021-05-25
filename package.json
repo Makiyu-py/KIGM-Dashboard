@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build:css": "NODE_ENV=production npx postcss app/static/src/css/style.css -o app/static/dist/css/tw.css",
-		"develop:css": "NODE_ENV=development npx postcss app/static/src/css/style.css -o app/static/dist/css/tw.css"
+		"build:css": "NODE_ENV=production npx postcss api/static/src/css/style.css -o api/static/dist/css/tw.css",
+		"develop:css": "NODE_ENV=development npx postcss api/static/src/css/style.css -o api/static/dist/css/tw.css"
 	},
 	"keywords": [],
 	"author": "",

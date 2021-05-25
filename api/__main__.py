@@ -1,5 +1,5 @@
 from sys import argv
-from app import app
+from api import app
 
 if len(argv) > 1:
     
