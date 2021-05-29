@@ -34,7 +34,7 @@ For Development:
 
 ```bash
 npm run develop:css
-python3 -m app -p { port number here }
+python3 -m api -p { port number here }
 ```
 
 For Production:
@@ -46,7 +46,7 @@ npm run build:css
 (that'll make a purged CSS build for production)
 
 ```bash
-python3 -m app --mode prod
+python3 -m api --mode prod
 ```
 
 (that'll remove the debug mode in Flask)
