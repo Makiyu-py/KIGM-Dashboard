@@ -4,15 +4,16 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build:css": "NODE_ENV=production npx postcss api/static/src/css/style.css -o api/static/dist/css/tw.css",
-		"develop:css": "NODE_ENV=development npx postcss api/static/src/css/style.css -o api/static/dist/css/tw.css"
+		"build:css": "TAILWIND_MODE=build NODE_ENV=production npx postcss api/static/src/css/style.css -o api/static/dist/css/tw.css",
+		"develop:css": "TAILWIND_MODE=watch NODE_ENV=development npx postcss api/static/src/css/style.css -o api/static/dist/css/tw.css -w"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"autoprefixer": "^10.2.5",
-		"postcss": "^8.2.14",
+		"@tailwindcss/jit": "^0.1.18",
+		"autoprefixer": "^10.2.6",
+		"postcss": "^8.3.0",
 		"tailwindcss": "^2.1.2"
 	},
 	"dependencies": {
