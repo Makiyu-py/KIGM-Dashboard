@@ -1,4 +1,4 @@
 {
-	"builds": [{ "src": "api/index.py", "use": "@vercel/python" }],
+	"builds": [{ "src": "api/index.py", "use": "@vercel/python@2.0.4-canary.0" }],
 	"routes": [{ "src": "/(.*)", "dest": "api/index.py" }]
 }
