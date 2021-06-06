@@ -1,12 +1,15 @@
+import os
 from . import app
-from os import getenv
+from decouple import config as getenv
 from utils import MongoClient
 from flask import render_template
 from flask_discord import DiscordOAuth2Session
 from motor.motor_asyncio import AsyncIOMotorClient
 
 
-REDIRECT_URI = "https://kigm-git-development-makiyu.vercel.app/callback" # OAuth2->Redirects add this one there
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
+REDIRECT_URI = "http://127.0.0.1:5000/callback" # OAuth2->Redirects add this one there
 
 FLASK_SECRET_KEY = bytes(getenv("FLASK_SECRET_KEY"), encoding='utf8')
 MONGO_URI = getenv("MONGO_SECRET")
