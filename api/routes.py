@@ -10,6 +10,11 @@ _mongo = db()  # main db instance
 def homepage():
     return better_render("home.html", title="Home")
 
+# arc.io widget
+@app.route("/arc-sw.js")
+def arc_js():
+    return redirect("https://arc.io/arc-sw.js")
+
 @app.route("/login")
 def login():
     return discord.create_session(scope=['identify', 'guilds'])
